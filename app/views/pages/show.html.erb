@@ -1,0 +1,19 @@
+<h2><%= @page.title %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @page.contents %>
+  </tbody>
+</table>
+
+<%= link_to 'New Content', new_page_content_path(@page) %> |
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
