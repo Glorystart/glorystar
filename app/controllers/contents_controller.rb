@@ -57,6 +57,6 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:name, :page_id)
+      params.require(:content).permit(:name, :page_id, { member_ids: [] })
     end
 end

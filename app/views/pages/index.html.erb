@@ -1,25 +1,39 @@
-<h1>Listing pages</h1>
-
+<h1>所有頁面</h1>
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
+      <th>標題</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pages.each do |page| %>
       <tr>
-        <td><%= page.title %></td>
-        <td><%= link_to 'Show', page %></td>
-        <td><%= link_to 'Edit', edit_page_path(page) %></td>
-        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to page.title, page %></td>
+        <td><%= link_to '編輯', edit_page_path(page) %></td>
+        <td><%= link_to '刪除', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to '新增頁面', new_page_path %>
 
-<br>
 
-<%= link_to 'New Page', new_page_path %>
+<h1>所有資源</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>名稱</th>
+    </tr>
+
+    <tbody>
+      <tr>
+        <td><%= link_to '成員', members_path %></td>
+      </tr>
+      <tr>
+        <td><%= link_to '消息', notifications_path %></td>
+      </tr>
+    </tbody>
+  </thead>
+</table>

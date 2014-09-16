@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914074026) do
+ActiveRecord::Schema.define(version: 20140916133600) do
 
   create_table "contents", force: true do |t|
     t.string   "name"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20140914074026) do
   end
 
   add_index "contents", ["page_id"], name: "index_contents_on_page_id"
+
+  create_table "members", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "status",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", force: true do |t|
     t.string   "title"

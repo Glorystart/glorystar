@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :notifications
+
+  resources :members
+
   resources :pages do
-    resources :contents, only: [:new, :show, :edit, :create, :update, :destroy]
+    resources :contents
   end
   root 'pages#index'
 end
